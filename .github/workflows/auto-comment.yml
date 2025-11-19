@@ -7,6 +7,8 @@ on:
 jobs:
   auto-comment:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     if: contains(github.event.issue.labels.*.name, 'feedback') || contains(github.event.issue.labels.*.name, 'suggestion')
     steps:
       - name: Add thank you comment
